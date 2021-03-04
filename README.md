@@ -10,3 +10,6 @@ A simple script + cron job that create a plain text file for you to journal that
 **Linux**:
 TBD
 
+### References:
+- [A Simple Launchd Tutorial](https://medium.com/@chetcorcos/a-simple-launchd-tutorial-9fecfcf2dbb3)
+- [How to Use launchd to Run Scripts on Schedule in macOS](https://www.maketecheasier.com/use-launchd-run-scripts-on-schedule-macos/)
