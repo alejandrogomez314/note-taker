@@ -14,4 +14,6 @@ if [ ! -d $NOTES/${YEAR}/${MONTH} ]; then
 	mkdir $NOTES/${YEAR}/${MONTH}
 fi
 file_name=$(date "+%m-%d-%y.txt")
-touch ~/Documents/notes/${YEAR}/${MONTH}/${file_name}
+FULL_PATH=~/Documents/notes/${YEAR}/${MONTH}/${file_name}
+TITLE=$(date "+%A, %B %d, %Y")
+echo "Notes for ${TITLE}" > $FULL_PATH
