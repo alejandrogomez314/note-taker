@@ -17,3 +17,5 @@ file_name=$(date "+%m-%d-%y.txt")
 FULL_PATH=~/Documents/notes/${YEAR}/${MONTH}/${file_name}
 TITLE=$(date "+%A, %B %d, %Y")
 echo "Notes for ${TITLE}" > $FULL_PATH
+
+open $FULL_PATH
