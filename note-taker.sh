@@ -15,7 +15,7 @@ if [ ! -d $NOTES/${YEAR}/${MONTH} ]; then
 fi
 
 file_name=""
-if [ $1 = "weekly-report" ]; then
+if [ "$1" == "weekly-report" ]; then
   file_name=$(date "+%m-%d-%y-weekly-report.txt")
 else
   file_name=$(date "+%m-%d-%y.txt")
@@ -24,7 +24,7 @@ fi
 FULL_PATH=~/Documents/notes/${YEAR}/${MONTH}/${file_name}
 TITLE=$(date "+%A, %B %d, %Y")
 
-if [ $1 = "weekly-report" ]; then
+if [ "$1" == "weekly-report" ]; then
   echo "Weekly Report for ${TITLE}" > $FULL_PATH
 else
   echo "Notes for ${TITLE}" > $FULL_PATH
