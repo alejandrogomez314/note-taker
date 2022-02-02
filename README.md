@@ -1,6 +1,10 @@
 # Note Taker
 A simple script + cron job that create a plain text file for you to journal that day. If the note is not used it will clean it up for you. Notes are organized by year/month format.
 
+### Prerequisites
+TBD: Platform requirements
+- Run `./install.sh` script if you want to have it available on your path
+
 ### Running
 **Mac**:
 1. Create an example launchd script like the one provided under your LaunchAgents folder (/Library/LaunchAgents)
