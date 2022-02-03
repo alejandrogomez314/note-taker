@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-source "$HOME/Documents/note-taker/common"
 
 setup_workspace() {
 NOTES="$HOME/Documents/notes"

@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 # import common utils
-DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-source "$DIR/../common"
+DIR=$( dirname $( dirname "${BASH_SOURCE[0]}" ) )/common
+source $DIR
 
-setup_workspace()
-echo "hello"
+setup_workspace
+
 file_name=$(date "+%m-%d-%y.txt")
 FULL_PATH=$HOME/Documents/notes/${YEAR}/${MONTH}/${file_name}
 if [ -f "$FULL_PATH" ]; then
