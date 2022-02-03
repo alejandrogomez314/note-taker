@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+source "$HOME/Documents/note-taker/common"
+
+setup_workspace() {
+NOTES="$HOME/Documents/notes"
+if [ ! -d "$NOTES" ]; then
+    mkdir "$NOTES"
+fi
+YEAR=$(date +%Y)
+if [ ! -d "$NOTES"/"${YEAR}" ]; then
+    mkdir "$NOTES"/"${YEAR}"
+fi
+MONTH=$(date +%B)
+if [ ! -d "$NOTES"/"${YEAR}"/"${MONTH}" ]; then
+    mkdir "$NOTES"/"${YEAR}"/"${MONTH}"
+fi
+}

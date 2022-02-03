@@ -12,45 +12,20 @@ Usage: note-taker [command]
 
 Commands:
 new             Create a new note for the day
-weekly-effort   Create an effort reporting week note
+weekly-report   Create a weekly reporting note highling big achievements of weeek
 search          Search for a word in notes
 "
     exit 1
 }
 
+WORKDIR="$HOME/Documents/note-taker"
 case "$1" in
   new|n)
-NOTES=~/Documents/notes
-if [ ! -d $NOTES ]; then
-    mkdir $NOTES
-fi
-YEAR=$(date +%Y)
-if [ ! -d $NOTES/"${YEAR}" ]; then
-    mkdir $NOTES/"${YEAR}"
-fi
-MONTH=$(date +%B)
-if [ ! -d $NOTES/"${YEAR}"/"${MONTH}" ]; then
-	mkdir $NOTES/"${YEAR}"/"${MONTH}"
-fi
-
-file_name=""
-if [ "$1" == "weekly-report" ]; then
-  file_name=$(date "+%m-%d-%y-weekly-report.txt")
-else
-  file_name=$(date "+%m-%d-%y.txt")
-fi
-
-FULL_PATH=~/Documents/notes/${YEAR}/${MONTH}/${file_name}
-TITLE=$(date "+%A, %B %d, %Y")
-
-if [ "$1" == "weekly-report" ]; then
-  echo "Weekly Report for ${TITLE}" > "$FULL_PATH"
-else
-  echo "Notes for ${TITLE}" > "$FULL_PATH"
-fi
-
-open "$FULL_PATH"
-;;
+    "$WORKDIR/commands/new"
+    ;;
+  weekly-report|wr)
+    "$WORKDIR/commands/weekly-report"
+    ;;
   *)
     cli_help
     ;;
