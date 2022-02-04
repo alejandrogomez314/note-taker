@@ -1,2 +1,19 @@
 #!/usr/bin/env bash
 
+# import common utils
+DIR=$( dirname $( dirname "${BASH_SOURCE[0]}" ) )/common
+source $DIR
+
+setup_workspace
+
+file_name=weekly-report-$(date "+%m-%d-%y.txt")
+FULL_PATH=$HOME/Documents/notes/${YEAR}/${MONTH}/${file_name}
+if [ -f "$FULL_PATH" ]; then
+    open "$FULL_PATH";
+    exit 0;
+fi
+
+# Write on note
+TITLE=$(date "+%A, %B %d, %Y")
+echo "Weekly Report for ${TITLE}" > "$FULL_PATH"
+open "$FULL_PATH"

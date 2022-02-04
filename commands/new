@@ -15,5 +15,6 @@ fi
 
 # Write on note
 TITLE=$(date "+%A, %B %d, %Y")
-echo "Notes for ${TITLE}" > "$FULL_PATH"
+echo -e "Notes for ${TITLE}\n\nSCRUM\n\n\nPROJECTS" > "$FULL_PATH"
 open "$FULL_PATH"
+
